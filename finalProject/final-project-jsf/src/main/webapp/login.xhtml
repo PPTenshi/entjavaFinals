@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="template.xhtml">
+    <ui:define name="pageTitle">#{msg['login.pageTitle']}</ui:define>
+    <ui:define name="pageHeader">#{msg['login.pageHeader']}</ui:define>
+    <ui:define name="body">
+        <h:form>
+            <h:messages globalOnly="true" style="color:red;margin:8px;" />
+            <h2>Log<b>in</b></h2>
+            <hr style="color: dimgray" width="50%"></hr>
+            <div class="form-group">
+                <h:inputText value="#{login.email}" id="email_" required="true" requiredMessage="Please fill this up" class="form-control" p:placeholder="Enter email" >
+                    <f:validateRequired />
+                </h:inputText>
+                <h:message for="email_" style="color:red" />
+
+            </div>
+            <div class="form-group">
+                <h:inputSecret value="#{login.password}" id="password" required="true" requiredMessage="Please fill this up" class="form-control" p:placeholder="Enter password">
+                    <f:validateRequired />
+                </h:inputSecret>
+                <h:message for="password" style="color: red"/>
+            </div>
+            <!--<h:selectBooleanCheckbox value="#{rememberMe}" /> Remember Me-->
+            <br/>
+            <h:commandButton action="#{login.login}" value="Log in" styleClass="btn btn-outline-primary"/> <!-- this log in needs javascript-->
+        <br/>
+
+        <hr style="color: dimgray" width="50%"></hr>
+        </h:form>
+        <h:link id="forgotPass" value="Forgot Password ?"
+                style="font-size:0.7em" outcome="forgot_password.xhtml"/>
+        <h:link value="Create a New Account" styleClass="btn btn-outline-success ml-3" outcome="signup"/>
+    </ui:define>
+
+
+</ui:composition>
+
+</html>

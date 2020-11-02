@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/final-project-ejb/final-project-ejb.iml" filepath="$PROJECT_DIR$/final-project-ejb/final-project-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/final-project-jsf/final-project-jsf.iml" filepath="$PROJECT_DIR$/final-project-jsf/final-project-jsf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finalProject.iml" filepath="$PROJECT_DIR$/finalProject.iml" />
+    </modules>
+  </component>
+</project>
