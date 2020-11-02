@@ -8,17 +8,23 @@ body {
     margin: auto;
 
 }
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
 .navbar .navbar-brand {
     font-size: 20px;
     padding-left: 0;
     flex:1;
 }
-.navbar .navbar-brand b {
-    color: #29c68c;
-}
 .navbar a{
     color: #999;
     background: transparent;
+}
+.navbar .navbar-brand b {
+    color: #29c68c;
 }
 .navbar .navbar-nav a:hover {
     color: #29c68c;
@@ -164,4 +170,16 @@ h2::after {
 .star-rating i {
     font-size: 14px;
     color: #ffc000;
+}
+.form-inline {
+    display: inline-block;
+}
+@media (max-width: 1199px){
+    .form-inline {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .input-group {
+        width: 100%;
+    }
 }
