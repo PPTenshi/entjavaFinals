@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<f:loadBundle basename="message" var="msg"/>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+
+        h2 b {
+            color: #29c68c;
+        }
+    </style>
+
+    <title><ui:insert name="pageTitle">Page Title</ui:insert> </title>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <a class="navbar-brand" href="landing_page.xhtml">
+        <ui:insert name="pageHeader">#{msg['home.pageHeader']}</ui:insert>
+    </a>
+</nav>
+
+<!-- Creating of Container for each Web Pages -->
+<div class="container p-3 my-3 border">
+    <!-- Design of each body in each Web Pages -->
+    <center>
+        <ui:insert name="body"></ui:insert>
+    </center>
+</div>
+</body>
+
+</html>
