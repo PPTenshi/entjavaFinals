@@ -21,7 +21,7 @@ public class sign_up_form_bean implements Serializable {
     public String addUser(){
         long userId = this.user_catalogLocalBean.getUsers().size()+ 1;
 
-        this.user_catalogLocalBean.addUser(new signup_users(userId, this.user.getFirstname(), this.user.getLastname(), this.user.getMobile_number(),
+        this.user_catalogLocalBean.addUser(new signup_users(this.user.getFirstname(), this.user.getLastname(), this.user.getMobile_number(),
                 this.user.getPassword(), this.user.getEmail()) );
 
         this.user_catalogLocalBean.getUsers().stream().forEach(user ->{

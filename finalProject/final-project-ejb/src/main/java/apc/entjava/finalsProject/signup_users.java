@@ -1,11 +1,28 @@
 package apc.entjava.finalsProject;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Signedup_Users")
 public class signup_users {
+    @Id
+    @Column(name = "Signed_Users_Id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
+
+    @Column(name = "firstName")
     private String firstname;
+
+    @Column(name = "lastName")
     private String lastname;
+
+    @Column(name = "MobileNumber")
     private String mobile_number;
+
+    @Column(name = "Password")
     private String password;
+
+    @Column(name = "Email")
     private String email;
 
     public Long getUserId() {
@@ -20,9 +37,8 @@ public class signup_users {
 
     }
 
-    public signup_users(Long userId, String firstname, String lastname, String mobile_number,
+    public signup_users(String firstname, String lastname, String mobile_number,
                         String password, String email){
-        this.userId = userId;
         this.firstname = firstname;
         this.lastname = lastname;
         this.mobile_number = mobile_number;

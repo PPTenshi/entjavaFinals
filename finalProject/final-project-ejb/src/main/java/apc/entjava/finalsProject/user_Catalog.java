@@ -2,6 +2,8 @@ package apc.entjava.finalsProject;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,9 @@ import java.util.List;
 @LocalBean
 public class user_Catalog implements user_CatalogLocal {
 
-    private List<signup_users> users = new ArrayList<>();
+//    private List<signup_users> users = new ArrayList<>();
+    @PersistenceContext
+    private EntityManager entityManager;
 
     public user_Catalog() {
 
@@ -17,12 +21,12 @@ public class user_Catalog implements user_CatalogLocal {
 
     @Override
     public List<signup_users> getUsers() {
-        return this.users;
+        return this.entityManager.createQuery("select c from signup_users c", signup_users.class).getResultList();
     }
 
     @Override
     public void addUser(signup_users user) {
-        this.users.add(user);
+        this.entityManager.persist(user);
 
     }
 }
