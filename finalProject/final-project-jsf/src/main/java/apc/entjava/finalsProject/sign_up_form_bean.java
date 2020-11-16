@@ -2,6 +2,7 @@ package apc.entjava.finalsProject;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,9 +15,10 @@ public class sign_up_form_bean implements Serializable {
     @EJB
     private user_CatalogLocal user_catalogLocalBean;
 
+    private List<signup_users> users = new ArrayList<>();
+
     private signup_users user = new signup_users();
 
-    private List<signup_users> users = new ArrayList<>();
 
     public String addUser(){
         long userId = this.user_catalogLocalBean.getUsers().size()+ 1;
@@ -29,7 +31,6 @@ public class sign_up_form_bean implements Serializable {
         });
         return "signup_success?faces-redirect=true";
     }
-
     public void init(){
         this.users = this.user_catalogLocalBean.getUsers();
     }
@@ -46,7 +47,4 @@ public class sign_up_form_bean implements Serializable {
         return users;
     }
 
-    public void setUsers(List<signup_users> users) {
-        this.users = users;
-    }
 }

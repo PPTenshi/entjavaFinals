@@ -1,14 +1,17 @@
 package apc.entjava.finalsProject;
 
+import javax.enterprise.context.Conversation;
+import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Named
-@RequestScoped
-public class sign_up_delete_bean {
+@ConversationScoped
+public class sign_up_delete_bean implements Serializable {
 
     private Long userId;
 
@@ -17,21 +20,20 @@ public class sign_up_delete_bean {
     @Inject
     private sign_up_form_bean signUpFormBean;
 
+    @Inject
+    private user_Catalog UserCatalog;
+
+    @Inject
+    private Conversation conversation;
+
     public void fetchUser(){
-        List<signup_users> users = this.signUpFormBean.getUsers().stream().filter(i -> {
-            return i.getUserId() == userId;
-        }).collect(Collectors.toList());
-        if (users.isEmpty()){
-            this.user = null;
-        }else{
-            this.user = users.get(0);
-        }
+        conversation.begin();
+        this.user = UserCatalog.findUser(this.userId);
     }
 
     public String removeUser(){
-        this.signUpFormBean.getUsers().removeIf(user -> {
-            return user.getUserId().equals(this.userId);
-        });
+        this.UserCatalog.deleteUser(this.user);
+        conversation.end();
         return "signup_success?faces-redirect=true";
     }
 
