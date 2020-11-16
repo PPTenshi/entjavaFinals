@@ -3,10 +3,10 @@ package apc.entjava.finals;
 public class CustomerData {
     private String cust_name;
     private String cust_email;
-    private int cust_ID;
+    private long cust_ID;
 
 
-    public CustomerData(String cust_name, String cust_email, int cust_ID){
+    public CustomerData(long cust_ID, String cust_name, String cust_email){
         super();
         this.cust_name = cust_name;
         this.cust_email = cust_email;
@@ -33,7 +33,7 @@ public class CustomerData {
         this.cust_email = cust_email;
     }
 
-    public int getCust_ID() {
+    public long getCust_ID() {
         return cust_ID;
     }
 
