@@ -1,8 +1,19 @@
 package apc.entjava.finals;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Customer_Data")
 public class CustomerData {
+    @Column(name="Customer_Name")
     private String cust_name;
+
+    @Column(name="Customer_Email")
     private String cust_email;
+
+    @Id
+    @Column(name="Customer_Data_ID")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long cust_ID;
 
 
