@@ -17,7 +17,7 @@ public class Login {
 
         FacesContext context = FacesContext.getCurrentInstance();
 
-        if(this.email.equals("ralphdedumo") && this.password.equals("ralph123")){
+        if(this.email.equals("admin") && this.password.equals("admin")){
             context.getExternalContext().getSessionMap().put("user", email);
             try {
                 context.getExternalContext().redirect("main_page.xhtml");

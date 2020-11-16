@@ -6,9 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="finalProject" />
-        <module name="final-project-ejb" />
         <module name="final-project-jsf" />
+        <module name="final-project-ejb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

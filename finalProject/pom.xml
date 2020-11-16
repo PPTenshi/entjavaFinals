@@ -8,31 +8,25 @@
     <artifactId>finalProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>finalProject</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>final-project-ejb</module>
+        <module>final-project-jsf</module>
+    </modules>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <junit.version>5.6.2</junit.version>
     </properties>
 
     <dependencies>
-
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-        </plugins>
-    </build>
 </project>

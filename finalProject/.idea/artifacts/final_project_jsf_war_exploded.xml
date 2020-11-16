@@ -13,6 +13,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="final-project-jsf" />
         </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="final-project-ejb-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="final-project-ejb" />
+          </element>
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/final-project-jsf/target/final-project-jsf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
