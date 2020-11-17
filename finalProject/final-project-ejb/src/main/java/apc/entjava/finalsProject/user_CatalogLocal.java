@@ -10,9 +10,10 @@ public interface user_CatalogLocal {
 
     public void addUser(signup_users item);
 
-    public signup_users findUser(Long userId);
 
-    public void deleteUser(signup_users user);
-
-    public List<signup_users> searchByName(String name);
+//    public signup_users findUser(Long userId);
+//
+//    public void deleteUser(signup_users user);
+//
+//    public List<signup_users> searchByName(String name);
 }

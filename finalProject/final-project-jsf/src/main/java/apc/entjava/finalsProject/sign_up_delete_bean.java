@@ -20,22 +20,43 @@ public class sign_up_delete_bean implements Serializable {
     @Inject
     private sign_up_form_bean signUpFormBean;
 
-    @Inject
-    private user_Catalog UserCatalog;
 
-    @Inject
-    private Conversation conversation;
+    public void fetchUser() {
+        List<signup_users> users = this.signUpFormBean.getUsers().stream().filter(i -> {
+            return i.getUserId() == userId;
+        }).collect(Collectors.toList());
 
-    public void fetchUser(){
-        conversation.begin();
-        this.user = UserCatalog.findUser(this.userId);
+        if (users.isEmpty()) {
+            this.user = null;
+        } else {
+            this.user = users.get(0);
+        }
+
     }
 
     public String removeUser(){
-        this.UserCatalog.deleteUser(this.user);
-        conversation.end();
+        this.signUpFormBean.getUsers().removeIf(user ->{
+            return user.getUserId().equals(this.userId);
+        });
         return "signup_success?faces-redirect=true";
     }
+
+//    @Inject
+//    private user_Catalog UserCatalog;
+//
+//    @Inject
+//    private Conversation conversation;
+//
+//    public void fetchUser(){
+//        conversation.begin();
+//        this.user = UserCatalog.findUser(this.userId);
+//    }
+//
+//    public String removeUser(){
+//        this.UserCatalog.deleteUser(this.user);
+//        conversation.end();
+//        return "signup_success?faces-redirect=true";
+//    }
 
     public Long getUserId() {
         return userId;

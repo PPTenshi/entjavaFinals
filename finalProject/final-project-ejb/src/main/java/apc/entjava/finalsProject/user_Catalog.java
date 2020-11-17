@@ -27,19 +27,19 @@ public class user_Catalog implements user_CatalogLocal {
     @Override
     public void addUser(signup_users user) {this.entityManager.persist(user);}
 
-    @Override
-    public signup_users findUser(Long userId) {
-        return this.entityManager.find(signup_users.class, userId);
-    }
-
-    @Override
-    public void deleteUser(signup_users user) {
-        this.entityManager.remove(this.entityManager.contains(user) ? user:this.entityManager.merge(user));
-    }
-
-    @Override
-    public List<signup_users> searchByName(String name) {
-        return this.entityManager.createQuery("select c from signup_users c"+
-                " where c.firstname like :name", signup_users.class).setParameter("name", "%" + name +"%").getResultList();
-    }
+//    @Override
+//    public signup_users findUser(Long userId) {
+//        return this.entityManager.find(signup_users.class, userId);
+//    }
+//
+//    @Override
+//    public void deleteUser(signup_users user) {
+//        this.entityManager.remove(this.entityManager.contains(user) ? user:this.entityManager.merge(user));
+//    }
+//
+//    @Override
+//    public List<signup_users> searchByName(String name) {
+//        return this.entityManager.createQuery("select c from signup_users c"+
+//                " where c.firstname like :name", signup_users.class).setParameter("name", "%" + name +"%").getResultList();
+//    }
 }
