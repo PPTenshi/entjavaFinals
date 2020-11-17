@@ -15,7 +15,7 @@ public class sign_up_form_bean implements Serializable {
     @EJB
     private user_CatalogLocal user_catalogLocalBean;
 
-//    private List<signup_users> users = new ArrayList<>();// this array is converted to te user_Catalog to implement search
+    private List<signup_users> users = new ArrayList<>();// this array is converted to te user_Catalog to implement search
 
     private signup_users user = new signup_users();
 
@@ -35,31 +35,35 @@ public class sign_up_form_bean implements Serializable {
         });
         return "signup_success?faces-redirect=true";
     }
-    public signup_users getUser() {
-        return user;
-    }
-//
-    public void setUser(signup_users user) {
-        this.user = user;
-    }
-    public List<signup_users> getUsers() {
-        return this.user_catalogLocalBean.getUsers();
-    }
-    // public void init(){
-//        this.users = this.user_catalogLocalBean.getUsers();
-//    }
-//
 //    public signup_users getUser() {
 //        return user;
 //    }
-//    //
+////
 //    public void setUser(signup_users user) {
 //        this.user = user;
 //    }
 //    public List<signup_users> getUsers() {
-//        return users;
+//        return this.user_catalogLocalBean.getUsers();
 //    }
-//
+     public void init(){
+        this.users = this.user_catalogLocalBean.getUsers();
+    }
+
+    public signup_users getUser() {
+        return user;
+    }
+    //
+    public void setUser(signup_users user) {
+        this.user = user;
+    }
+    public List<signup_users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<signup_users> users) {
+        this.users = users;
+    }
+    //
 //    public String getSearchUser() {
 //        return searchUser;
 //    }

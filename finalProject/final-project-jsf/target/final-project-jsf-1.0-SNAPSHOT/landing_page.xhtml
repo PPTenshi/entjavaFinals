@@ -30,20 +30,15 @@
                                             <div class="img-box">
                                                 <h:graphicImage value="resources/products/grinder.png" styleClass="img-fluid"/>
                                             </div>
-                                            <div class="thumb-content">
-                                                <h4>DeWalt Angle Grinder</h4>
-                                                <p class="item-price"><span>₱2,200</span></p>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
+                                            <h:form>
+                                                <div class="thumb-content">
+                                                    <h4>DeWalt Angle Grinder</h4>
+                                                    <input type="hidden" value="DeWalt Angle Grinder"/>
+                                                    <p class="item-price"><span>₱2,200</span></p>
+                                                    <input type="hidden" value="2,200"/>
+                                                    <input name="addToCart" value="Add to Cart" type="submit" class="btn btn-primary"/>
                                                 </div>
-                                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                            </div>
+                                            </h:form>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -299,8 +294,6 @@
                 </div>
             </div>
         </div>
-
-
     </ui:define>
 </ui:composition>
 

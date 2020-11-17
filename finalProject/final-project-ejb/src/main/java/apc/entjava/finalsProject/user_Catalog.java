@@ -11,9 +11,10 @@ import java.util.List;
 @LocalBean
 public class user_Catalog implements user_CatalogLocal {
 
-//    private List<signup_users> users = new ArrayList<>();
     @PersistenceContext
     private EntityManager entityManager;
+
+    private List<signup_users> users = new ArrayList<>();
 
     public user_Catalog() {
 
@@ -21,7 +22,8 @@ public class user_Catalog implements user_CatalogLocal {
 
     @Override
     public List<signup_users> getUsers() {
-        return this.entityManager.createQuery("select c from signup_users c", signup_users.class).getResultList();
+        return this.entityManager.createQuery("select c from signup_users c",
+                signup_users.class).getResultList();
     }
 
     @Override

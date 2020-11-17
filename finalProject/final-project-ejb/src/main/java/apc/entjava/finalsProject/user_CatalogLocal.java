@@ -8,7 +8,7 @@ public interface user_CatalogLocal {
 
     public List<signup_users> getUsers();
 
-    public void addUser(signup_users item);
+    public void addUser(signup_users user);
 
 
 //    public signup_users findUser(Long userId);
